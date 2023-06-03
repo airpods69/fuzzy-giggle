@@ -4,8 +4,8 @@ This is the implementation of each part of my year long capstone/research projec
 
 This includes
     1. The menu to start the whole project (WIP)
-    2. The model architecture
-    3. The implementation of the Arduino Car (WIP, I think it will be in Rust).
+    2. The model architecture -> The manipulator
+    3. The implementation of the Arduino Car (WIP, I think it will be in Rust). The manipulated
     4. More features would be added later. I didn't want to feature creep 
 
 
