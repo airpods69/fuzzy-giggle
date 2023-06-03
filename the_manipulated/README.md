@@ -10,7 +10,7 @@ I think, I'll hardcode this whole car since its pretty simple and this won't be 
 Tech stack: I think I'll use rust and some crates (Will be told soon)
 
 ## Targets
-- [ ] Get one LED to work
+- [x] Get one LED to work
 - [ ] Get 4 LEDs to work
 - [ ] Send signal from laptop to arduino to selectively start up 
 - [ ] Add shared control using an Ultrasonic sensor (Or an IR sensor)
