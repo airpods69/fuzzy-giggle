@@ -16,3 +16,9 @@ This is not the final deal and this readme will get edited alot of times as I pr
 2. You connect the headsets to my project.
 3. Train yourself and the model for yourself through the menu (There will be an option for that soon)
 4. Start playing around if you don't want to visualize.
+
+## Targets
+I think I will first work on the manipulated part of the project.
+
+- [ ] The Manipulated
+- [ ] The Manipulator
