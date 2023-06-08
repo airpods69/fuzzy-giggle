@@ -33,7 +33,7 @@ class EEG_DATASET(Dataset):
                 if annotations[i][-1] not in [1, 2, 3, 4, 5, 6, 9, 10]:
                     eeg_with_label = [raw_data[annotations[i][0]: annotations[i + 1][0]].T[:22], annotations[i][-1] - 7] # removes the eog signals here as well
                     labeled_eeg.append(eeg_with_label)
-            labeled_eeg.append([raw_data[annotations[-1][0]:].T[:22], annotations[i][-1] - 7])
+        labeled_eeg.append([raw_data[annotations[-1][0]:].T[:22], annotations[i][-1]]) # gets the last data signal from raw data
         return labeled_eeg
 
 
@@ -41,9 +41,11 @@ class EEG_DATASET(Dataset):
         # splits the labeled eeg signals in batches of 250 (sampling rate)
         split = []
         for eeg_label in labeled_eeg:
-            for i in range(0, len(eeg_label[0].T) - 250 - 2, 250): # idk why the -2 exists but it was in my previous code so lets not remove it
+            for i in range(0, len(eeg_label[0].T) - 250, 250): # idk why the -2 exists but it was in my previous code so lets not remove it
                 split.append([eeg_label[0].T[i: i + 250].T, eeg_label[1]])
 
+        split.pop()
+        split.pop()
         return split
 
     def __len__(self):

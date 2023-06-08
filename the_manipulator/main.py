@@ -66,9 +66,14 @@ class EEG_DATASET(Dataset):
         return torch.tensor(np.array([self.eeg_data[idx][0].T]).astype('float32')), torch.tensor(np.array(self.eeg_data[idx][1]).astype('float32'))
 
 eeg_dataset = EEG_DATASET(eeg_split)
-print(eeg_dataset.__getitem__(0)[0].shape)
+for i in range(eeg_dataset.__len__()):
+    print(eeg_dataset.__getitem__(i)[1])
+
+exit()
+
 
 eeg_loader = DataLoader(eeg_dataset, batch_size = 16, shuffle = True)
+
 
 class Flatten(nn.Module):
     def forward(self, input):
